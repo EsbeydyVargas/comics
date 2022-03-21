@@ -4,5 +4,6 @@ RUN mkdir /app
 ADD . /app
 WORKDIR /app
 RUN pip3 install --upgrade pip
-RUN pip install -r requirements.txt
+RUN python3 -m pip install --upgrade pip setuptools wheel                                                                                                                                                                                                
+RUN python3 -m pip install -r requirements.txt
 CMD ["python", "searchComics.py"]
