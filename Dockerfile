@@ -1,7 +1,7 @@
 FROM python:3.8-alpine
-RUN apt-get update && apt-get upgrade
 RUN mkdir /app
 ADD . /app
 WORKDIR /app
-RUN pip install -r requirements.txt
+RUN python3 -m pip install --upgrade pip setuptools wheel                                                                                                                                                                                                
+RUN python3 -m pip install -r requirements.txt  
 CMD ["python", "searchComics.py"]
