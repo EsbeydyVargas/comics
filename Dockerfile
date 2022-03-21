@@ -3,5 +3,6 @@ RUN apk --no-cache add --virtual .builddeps gcc gfortran musl-dev     && pip ins
 RUN mkdir /app
 ADD . /app
 WORKDIR /app
+RUN pip3 install --upgrade pip
 RUN pip install -r requirements.txt
 CMD ["python", "searchComics.py"]
